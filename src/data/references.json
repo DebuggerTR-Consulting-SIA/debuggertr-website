@@ -1,37 +1,18 @@
 [
   {
-    "id": "1",
-    "name": "Save test",
-    "industry": {
-      "en": "Logistics",
-      "tr": "Lojistik",
-      "lv": "Loģistika"
-    },
-    "description": {
-      "en": "Achieved 40% efficiency increase in warehouse processes with SAP EWM implementation. Simultaneous go-live across 3 distribution centers.",
-      "tr": "SAP EWM implementasyonu ile depo süreçlerinde %40 verimlilik artışı sağlandı. 3 dağıtım merkezinde eş zamanlı go-live gerçekleştirildi.",
-      "lv": "Sasniegts 40% efektivitātes pieaugums noliktavas procesos ar SAP EWM ieviešanu. Vienlaicīgs go-live 3 izplatīšanas centros."
-    },
-    "tags": [
-      "SAP EWM",
-      "Go-Live",
-      "WM Migration"
-    ],
-    "category": "ewm",
-    "iconKey": "Truck"
-  },
-  {
     "id": "2",
     "name": "EuroPharm GmbH",
     "industry": {
       "en": "Pharmaceutical",
       "tr": "İlaç",
-      "lv": "Farmācija"
+      "lv": "Farmācija",
+      "de": "Pharmazie"
     },
     "description": {
       "en": "Developed GxP-compliant EWM solution for pharmaceutical industry. Batch management and serialization integration completed.",
       "tr": "İlaç sektörüne özel GxP uyumlu EWM çözümü geliştirildi. Batch management ve serialization entegrasyonu yapıldı.",
-      "lv": "Izstrādāts GxP atbilstošs EWM risinājums farmācijas nozarei. Pabeigta sērijas pārvaldības un serializācijas integrācija."
+      "lv": "Izstrādāts GxP atbilstošs EWM risinājums farmācijas nozarei. Pabeigta sērijas pārvaldības un serializācijas integrācija.",
+      "de": "GxP-konformes EWM-Lösungskonzept für die Pharmaindustrie entwickelt. Chargenverwaltung und Serialisierungsintegration abgeschlossen."
     },
     "tags": [
       "SAP EWM",
@@ -48,12 +29,14 @@
     "industry": {
       "en": "Retail",
       "tr": "Perakende",
-      "lv": "Mazumtirdzniecība"
+      "lv": "Mazumtirdzniecība",
+      "de": "Einzelhandel"
     },
     "description": {
       "en": "SAP EWM integration for omni-channel retail distribution center. Centralized management of e-commerce and store orders.",
       "tr": "Çok kanallı perakende dağıtım merkezine SAP EWM entegrasyonu. E-ticaret ve mağaza siparişlerinin tek merkezden yönetimi.",
-      "lv": "SAP EWM integrācija daudzkanālu mazumtirdzniecības izplatīšanas centram. Centralizēta e-komercijas un veikala pasūtījumu pārvaldība."
+      "lv": "SAP EWM integrācija daudzkanālu mazumtirdzniecības izplatīšanas centram. Centralizēta e-komercijas un veikala pasūtījumu pārvaldība.",
+      "de": "SAP EWM-Integration für ein Omnichannel-Einzelhandels-Distributionszentrum. Zentralisierte Verwaltung von E-Commerce- und Filialbestellungen."
     },
     "tags": [
       "SAP EWM",
@@ -70,12 +53,14 @@
     "industry": {
       "en": "Manufacturing",
       "tr": "Üretim",
-      "lv": "Ražošana"
+      "lv": "Ražošana",
+      "de": "Fertigung"
     },
     "description": {
       "en": "ABAP development and optimization for manufacturing warehouse management. Custom PPF action and BADI implementations.",
       "tr": "Üretim tesisi depo yönetimi için ABAP geliştirme ve optimizasyon. Custom PPF action ve BADI implementasyonları.",
-      "lv": "ABAP izstrāde un optimizācija ražošanas noliktavas pārvaldībai. Pielāgota PPF darbību un BADI ieviešana."
+      "lv": "ABAP izstrāde un optimizācija ražošanas noliktavas pārvaldībai. Pielāgota PPF darbību un BADI ieviešana.",
+      "de": "ABAP-Entwicklung und -Optimierung für das Fertigungslager. Implementierung benutzerdefinierter PPF-Aktionen und BADIs."
     },
     "tags": [
       "ABAP",
@@ -92,12 +77,14 @@
     "industry": {
       "en": "3PL",
       "tr": "3PL",
-      "lv": "3PL"
+      "lv": "3PL",
+      "de": "3PL"
     },
     "description": {
       "en": "Multi-client EWM solution for 3PL operations. Billing integration and custom reporting.",
       "tr": "3PL operasyonları için çok müşterili EWM çözümü. Faturalama entegrasyonu ve custom raporlama.",
-      "lv": "Vairāku klientu EWM risinājums 3PL operācijām. Norēķinu integrācija un pielāgota atskaišu veidošana."
+      "lv": "Vairāku klientu EWM risinājums 3PL operācijām. Norēķinu integrācija un pielāgota atskaišu veidošana.",
+      "de": "EWM-Mehrmandantenlösung für 3PL-Betriebe. Abrechnungsintegration und benutzerdefiniertes Reporting."
     },
     "tags": [
       "SAP EWM",
@@ -114,12 +101,14 @@
     "industry": {
       "en": "Distribution",
       "tr": "Dağıtım",
-      "lv": "Izplatīšana"
+      "lv": "Izplatīšana",
+      "de": "Distribution"
     },
     "description": {
       "en": "Successful WM to EWM migration for distribution center. S/4HANA embedded EWM transition.",
       "tr": "Dağıtım merkezi WM'den EWM'ye başarılı migrasyon. S/4HANA embedded EWM geçişi.",
-      "lv": "Veiksmīga WM uz EWM migrācija izplatīšanas centram. S/4HANA iegultā EWM pāreja."
+      "lv": "Veiksmīga WM uz EWM migrācija izplatīšanas centram. S/4HANA iegultā EWM pāreja.",
+      "de": "Erfolgreiche WM-zu-EWM-Migration für ein Distributionszentrum. Übergang zu S/4HANA Embedded EWM."
     },
     "tags": [
       "Migration",

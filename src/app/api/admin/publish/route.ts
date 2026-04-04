@@ -46,6 +46,7 @@ export async function POST() {
       {
         cwd: PROJECT_ROOT,
         timeout: 180000,
+        maxBuffer: 50 * 1024 * 1024, // 50 MB — next build output exceeds the 1 MB default
         env: {
           ...process.env,
           NODE_ENV: "production",
