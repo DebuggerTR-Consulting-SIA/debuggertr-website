@@ -22,9 +22,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const filters = [
-  { key: "all", label: { en: "All", tr: "Tümü", lv: "Visi" } },
-  { key: "ewm", label: { en: "SAP EWM", tr: "SAP EWM", lv: "SAP EWM" } },
-  { key: "abap", label: { en: "ABAP", tr: "ABAP", lv: "ABAP" } },
+  { key: "all", label: { en: "All", tr: "Tümü", lv: "Visi", de: "Alle" } },
+  { key: "ewm", label: { en: "SAP EWM", tr: "SAP EWM", lv: "SAP EWM", de: "SAP EWM" } },
+  { key: "abap", label: { en: "ABAP", tr: "ABAP", lv: "ABAP", de: "ABAP" } },
 ];
 
 export default function ReferencesPage() {

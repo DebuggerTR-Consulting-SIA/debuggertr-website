@@ -1096,7 +1096,7 @@ export default function AdminPage() {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h2 className="text-lg font-bold text-gray-800">References</h2>
-                    <p className="text-sm text-gray-400">{data.references.length} clients · EN / TR / LV</p>
+                    <p className="text-sm text-gray-400">{data.references.length} clients · EN / TR / LV / DE</p>
                   </div>
                 </div>
                 <ReferencesTab refs={data.references} onChange={(refs) => setData({ ...data, references: refs })} />

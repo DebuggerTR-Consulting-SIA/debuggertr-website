@@ -387,7 +387,7 @@ export default function CvProfileClient({ initialCv }: { initialCv: CvEntry }) {
                     alt="DebuggerTR Consulting"
                     width={120}
                     height={36}
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "contain", width: "auto", height: "36px" }}
                     priority
                   />
                 </a>
