@@ -1,0 +1,18 @@
+{
+  "experience": {
+    "value": 10,
+    "suffix": "+"
+  },
+  "projects": {
+    "value": 50,
+    "suffix": "+"
+  },
+  "clients": {
+    "value": 30,
+    "suffix": "+"
+  },
+  "countries": {
+    "value": 8,
+    "suffix": ""
+  }
+}

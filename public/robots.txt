@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Disallow admin panel
+Disallow: /admin
+
+Sitemap: https://debuggertr.com/sitemap.xml

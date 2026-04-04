@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="347 277 238 238">
+  <defs>
+    <linearGradient id="g1" gradientUnits="userSpaceOnUse" x1="538.5558" y1="329.7381" x2="426.6414" y2="444.0798">
+      <stop offset="0" stop-color="#004CBA"/>
+      <stop offset="0.1733" stop-color="#0057BF"/>
+      <stop offset="0.4735" stop-color="#0073CD"/>
+      <stop offset="0.8621" stop-color="#00A0E3"/>
+      <stop offset="1" stop-color="#00B2EC"/>
+    </linearGradient>
+    <linearGradient id="g2" gradientUnits="userSpaceOnUse" x1="364.0735" y1="349.2889" x2="377.9605" y2="349.2889">
+      <stop offset="0" stop-color="#004CBA"/>
+      <stop offset="0.1733" stop-color="#0057BF"/>
+      <stop offset="0.4735" stop-color="#0073CD"/>
+      <stop offset="0.8621" stop-color="#00A0E3"/>
+      <stop offset="1" stop-color="#00B2EC"/>
+    </linearGradient>
+    <linearGradient id="g3" gradientUnits="userSpaceOnUse" x1="382.1249" y1="372.4246" x2="396.0119" y2="372.4246">
+      <stop offset="0" stop-color="#004CBA"/>
+      <stop offset="0.1733" stop-color="#0057BF"/>
+      <stop offset="0.4735" stop-color="#0073CD"/>
+      <stop offset="0.8621" stop-color="#00A0E3"/>
+      <stop offset="1" stop-color="#00B2EC"/>
+    </linearGradient>
+    <linearGradient id="g4" gradientUnits="userSpaceOnUse" x1="514.7894" y1="405.8791" x2="492.0087" y2="419.224">
+      <stop offset="0" stop-color="#004CBA"/>
+      <stop offset="0.1733" stop-color="#0057BF"/>
+      <stop offset="0.4735" stop-color="#0073CD"/>
+      <stop offset="0.8621" stop-color="#00A0E3"/>
+      <stop offset="1" stop-color="#00B2EC"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#g1)" d="M511.7,342.5h-26.9v46.9c5-3.9,11.3-6.2,18.1-6.2c16.4,0,29.6,13.3,29.6,29.6
+    c0,16.4-13.3,29.6-29.6,29.6c-16.4,0-29.6-13.3-29.6-29.6c0-0.1,0-0.1,0-0.2h0v-70.2h-31.6v0l-50.6,0
+    c-2.9,0-5.7,1.8-6.6,4.6c-1.5,4.7,2,8.9,6.4,8.9h45.9c2.7,0,4.8,2.2,4.8,4.8v0c0,2.7-2.2,4.8-4.8,4.8h-27.9
+    c-2.9,0-5.7,1.8-6.6,4.6c-1.5,4.7,2,8.9,6.4,8.9h28.1c2.7,0,4.8,2.2,4.8,4.8s-2.2,4.8-4.8,4.8l-10.9,0
+    c-2.9,0-5.7,1.8-6.6,4.6c-1.5,4.7,2,8.9,6.4,8.9h0c8.8,0,15.9,7.1,15.9,15.9v40.6c0,8.5,6.9,15.3,15.3,15.3h54.8
+    c30.9,0,55.9-25,55.9-55.9v-20C567.6,367.5,542.6,342.5,511.7,342.5z"/>
+  <circle fill="url(#g2)" cx="371" cy="349.3" r="6.9"/>
+  <circle fill="url(#g3)" cx="389.1" cy="372.4" r="6.9"/>
+  <circle fill="url(#g4)" cx="502.8" cy="412.9" r="12.3"/>
+</svg>

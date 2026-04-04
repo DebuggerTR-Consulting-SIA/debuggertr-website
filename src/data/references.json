@@ -1,0 +1,132 @@
+[
+  {
+    "id": "1",
+    "name": "Save test",
+    "industry": {
+      "en": "Logistics",
+      "tr": "Lojistik",
+      "lv": "Loģistika"
+    },
+    "description": {
+      "en": "Achieved 40% efficiency increase in warehouse processes with SAP EWM implementation. Simultaneous go-live across 3 distribution centers.",
+      "tr": "SAP EWM implementasyonu ile depo süreçlerinde %40 verimlilik artışı sağlandı. 3 dağıtım merkezinde eş zamanlı go-live gerçekleştirildi.",
+      "lv": "Sasniegts 40% efektivitātes pieaugums noliktavas procesos ar SAP EWM ieviešanu. Vienlaicīgs go-live 3 izplatīšanas centros."
+    },
+    "tags": [
+      "SAP EWM",
+      "Go-Live",
+      "WM Migration"
+    ],
+    "category": "ewm",
+    "iconKey": "Truck"
+  },
+  {
+    "id": "2",
+    "name": "EuroPharm GmbH",
+    "industry": {
+      "en": "Pharmaceutical",
+      "tr": "İlaç",
+      "lv": "Farmācija"
+    },
+    "description": {
+      "en": "Developed GxP-compliant EWM solution for pharmaceutical industry. Batch management and serialization integration completed.",
+      "tr": "İlaç sektörüne özel GxP uyumlu EWM çözümü geliştirildi. Batch management ve serialization entegrasyonu yapıldı.",
+      "lv": "Izstrādāts GxP atbilstošs EWM risinājums farmācijas nozarei. Pabeigta sērijas pārvaldības un serializācijas integrācija."
+    },
+    "tags": [
+      "SAP EWM",
+      "GxP",
+      "ABAP",
+      "Serialization"
+    ],
+    "category": "ewm",
+    "iconKey": "Pill"
+  },
+  {
+    "id": "3",
+    "name": "Nordic Retail AB",
+    "industry": {
+      "en": "Retail",
+      "tr": "Perakende",
+      "lv": "Mazumtirdzniecība"
+    },
+    "description": {
+      "en": "SAP EWM integration for omni-channel retail distribution center. Centralized management of e-commerce and store orders.",
+      "tr": "Çok kanallı perakende dağıtım merkezine SAP EWM entegrasyonu. E-ticaret ve mağaza siparişlerinin tek merkezden yönetimi.",
+      "lv": "SAP EWM integrācija daudzkanālu mazumtirdzniecības izplatīšanas centram. Centralizēta e-komercijas un veikala pasūtījumu pārvaldība."
+    },
+    "tags": [
+      "SAP EWM",
+      "RF",
+      "Integration",
+      "E-Commerce"
+    ],
+    "category": "ewm",
+    "iconKey": "ShoppingBag"
+  },
+  {
+    "id": "4",
+    "name": "Baltic Manufacturing",
+    "industry": {
+      "en": "Manufacturing",
+      "tr": "Üretim",
+      "lv": "Ražošana"
+    },
+    "description": {
+      "en": "ABAP development and optimization for manufacturing warehouse management. Custom PPF action and BADI implementations.",
+      "tr": "Üretim tesisi depo yönetimi için ABAP geliştirme ve optimizasyon. Custom PPF action ve BADI implementasyonları.",
+      "lv": "ABAP izstrāde un optimizācija ražošanas noliktavas pārvaldībai. Pielāgota PPF darbību un BADI ieviešana."
+    },
+    "tags": [
+      "ABAP",
+      "EWM",
+      "Production",
+      "PPF"
+    ],
+    "category": "abap",
+    "iconKey": "Factory"
+  },
+  {
+    "id": "5",
+    "name": "FastPack Logistics",
+    "industry": {
+      "en": "3PL",
+      "tr": "3PL",
+      "lv": "3PL"
+    },
+    "description": {
+      "en": "Multi-client EWM solution for 3PL operations. Billing integration and custom reporting.",
+      "tr": "3PL operasyonları için çok müşterili EWM çözümü. Faturalama entegrasyonu ve custom raporlama.",
+      "lv": "Vairāku klientu EWM risinājums 3PL operācijām. Norēķinu integrācija un pielāgota atskaišu veidošana."
+    },
+    "tags": [
+      "SAP EWM",
+      "3PL",
+      "ABAP",
+      "Billing"
+    ],
+    "category": "ewm",
+    "iconKey": "Package"
+  },
+  {
+    "id": "6",
+    "name": "CentralHub Distribution",
+    "industry": {
+      "en": "Distribution",
+      "tr": "Dağıtım",
+      "lv": "Izplatīšana"
+    },
+    "description": {
+      "en": "Successful WM to EWM migration for distribution center. S/4HANA embedded EWM transition.",
+      "tr": "Dağıtım merkezi WM'den EWM'ye başarılı migrasyon. S/4HANA embedded EWM geçişi.",
+      "lv": "Veiksmīga WM uz EWM migrācija izplatīšanas centram. S/4HANA iegultā EWM pāreja."
+    },
+    "tags": [
+      "Migration",
+      "SAP EWM",
+      "S/4HANA"
+    ],
+    "category": "ewm",
+    "iconKey": "Building2"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "DebuggerTR Consulting SIA",
+  "regNumber": "50203500891",
+  "email": "info@debuggertr.com",
+  "location": "Riga, Latvia",
+  "legalAddress": "Latgales iela 190 - 47, LV-1019, Riga, Latvia",
+  "workingHours": {
+    "weekdays": "09:00 - 18:00",
+    "weekend": "By appointment"
+  }
+}
