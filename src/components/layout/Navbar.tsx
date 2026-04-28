@@ -78,8 +78,8 @@ export default function Navbar() {
               width={160}
               height={43}
               priority
-              style={{ width: "auto", height: "2.25rem" }}
-              className="object-contain transition-all duration-300"
+              style={{ width: "auto" }}
+              className="h-9 sm:h-10 lg:h-12 object-contain transition-all duration-300"
             />
           </a>
 
