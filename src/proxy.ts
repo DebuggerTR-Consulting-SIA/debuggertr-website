@@ -7,7 +7,14 @@ export function proxy(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  if (pathname.startsWith("/api/admin")) {
+  const isAdminPage = pathname === "/admin" || pathname.startsWith("/admin/");
+  const isAdminApi = pathname.startsWith("/api/admin");
+
+  if (!isAdminPage && !isAdminApi) {
+    return NextResponse.next();
+  }
+
+  if (isAdminApi) {
     return new NextResponse(null, { status: 404 });
   }
 
@@ -17,5 +24,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin", "/admin/:path*", "/api/admin/:path*"],
+  matcher: "/((?!_next/static|_next/image|favicon.ico).*)",
 };
