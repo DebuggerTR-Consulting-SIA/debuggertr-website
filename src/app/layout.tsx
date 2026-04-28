@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import ClientLayout from "@/components/layout/ClientLayout";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/SEO/JsonLd";
@@ -104,6 +105,7 @@ export default function RootLayout({
         <WebsiteJsonLd />
         <TrackingScripts />
         <ClientLayout>{children}</ClientLayout>
+        <Analytics />
       </body>
     </html>
   );
