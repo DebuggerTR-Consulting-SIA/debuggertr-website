@@ -1,12 +1,21 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-export function proxy(_request: NextRequest) {
-  if (process.env.NODE_ENV === "production") {
+export function proxy(request: NextRequest) {
+  if (process.env.NODE_ENV !== "production") {
+    return NextResponse.next();
+  }
+
+  const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith("/api/admin")) {
     return new NextResponse(null, { status: 404 });
   }
-  return NextResponse.next();
+
+  const url = request.nextUrl.clone();
+  url.pathname = "/_blocked";
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: ["/admin", "/admin/:path*", "/api/admin/:path*"],
 };
