@@ -57,7 +57,7 @@ export default function Footer() {
               {[
                 { href: "/", label: messages.nav.home },
                 { href: "/about", label: messages.nav.about },
-                { href: "/references", label: messages.nav.references },
+                // { href: "/references", label: messages.nav.references }, // hidden until client permissions are confirmed
                 { href: "/contact", label: messages.nav.contact },
               ].map((link) => (
                 <li key={link.href}>
