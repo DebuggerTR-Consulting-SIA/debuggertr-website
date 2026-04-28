@@ -266,9 +266,9 @@ export default function CvProfileClient({ initialCv }: { initialCv: CvEntry }) {
     "worksFor": {
       "@type": "Organization",
       "name": "DebuggerTR Consulting SIA",
-      "url": "https://debuggertr.com"
+      "url": "https://www.debuggertr.com"
     },
-    "url": `https://debuggertr.com/cvs/${cv.slug}`,
+    "url": `https://www.debuggertr.com/cvs/${cv.slug}`,
     "email": "info@debuggertr.com",
     "knowsAbout": cv.module.split(/[,،]/).map(m => m.trim())
   };
@@ -498,7 +498,7 @@ export default function CvProfileClient({ initialCv }: { initialCv: CvEntry }) {
           )}
 
           <div style={{ textAlign: "center", paddingBottom: "24px" }}>
-            <a href="https://debuggertr.com" style={{ fontSize: "11px", color: "#9ca3af" }}>
+            <a href="https://www.debuggertr.com" style={{ fontSize: "11px", color: "#9ca3af" }}>
               debuggertr.com · SAP EWM &amp; ABAP Consulting
             </a>
           </div>

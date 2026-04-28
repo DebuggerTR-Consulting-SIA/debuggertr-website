@@ -3,8 +3,8 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "DebuggerTR Consulting SIA",
-    url: "https://debuggertr.com",
-    logo: "https://debuggertr.com/images/logo-dark.png",
+    url: "https://www.debuggertr.com",
+    logo: "https://www.debuggertr.com/images/logo-dark.png",
     email: "info@debuggertr.com",
     address: {
       "@type": "PostalAddress",
@@ -38,10 +38,10 @@ export function WebsiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "DebuggerTR Consulting",
-    url: "https://debuggertr.com",
+    url: "https://www.debuggertr.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://debuggertr.com/services?q={search_term_string}",
+      target: "https://www.debuggertr.com/services?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -72,7 +72,7 @@ export function ServiceJsonLd({
     provider: {
       "@type": "Organization",
       name: "DebuggerTR Consulting SIA",
-      url: "https://debuggertr.com",
+      url: "https://www.debuggertr.com",
     },
     areaServed: {
       "@type": "Place",

@@ -68,7 +68,7 @@ export async function generateMetadata(
       title,
       description,
       type: "profile",
-      url: `https://debuggertr.com/cvs/${cv.slug}`,
+      url: `https://www.debuggertr.com/cvs/${cv.slug}`,
       siteName: "DebuggerTR Consulting",
     },
     twitter: {
@@ -77,7 +77,7 @@ export async function generateMetadata(
       description,
     },
     alternates: {
-      canonical: `https://debuggertr.com/cvs/${cv.slug}`,
+      canonical: `https://www.debuggertr.com/cvs/${cv.slug}`,
     },
     robots: {
       index: true,

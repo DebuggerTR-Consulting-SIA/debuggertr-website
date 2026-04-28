@@ -9,6 +9,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SAP EWM & ABAP Services | DebuggerTR Consulting",
     description: "Expert SAP EWM consulting and ABAP development services for European businesses.",
-    url: "https://debuggertr.com/services",
+    url: "https://www.debuggertr.com/services",
   },
 };

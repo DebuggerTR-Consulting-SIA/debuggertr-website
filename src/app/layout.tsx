@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   authors: [{ name: "DebuggerTR Consulting SIA" }],
   creator: "DebuggerTR Consulting SIA",
   publisher: "DebuggerTR Consulting SIA",
-  metadataBase: new URL("https://debuggertr.com"),
+  metadataBase: new URL("https://www.debuggertr.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: ["de_DE", "tr_TR", "lv_LV"],
-    url: "https://debuggertr.com",
+    url: "https://www.debuggertr.com",
     siteName: "DebuggerTR Consulting",
     title: "DebuggerTR Consulting | SAP EWM & ABAP Consulting",
     description:

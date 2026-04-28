@@ -4,7 +4,7 @@ import path from "path";
 
 export const dynamic = "force-static";
 
-const BASE_URL = "https://debuggertr.com";
+const BASE_URL = "https://www.debuggertr.com";
 
 interface CvEntry { slug: string; uploadedAt: string }
 

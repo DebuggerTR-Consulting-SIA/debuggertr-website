@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Get in touch with DebuggerTR Consulting SIA. SAP EWM and ABAP consulting inquiries welcome. Located in Riga, Latvia.",
   keywords: ["contact DebuggerTR", "SAP consulting contact", "ABAP developer contact Latvia"],
-  alternates: { canonical: "https://debuggertr.com/contact" },
+  alternates: { canonical: "https://www.debuggertr.com/contact" },
   openGraph: {
     title: "Contact DebuggerTR Consulting",
     description: "Reach out for SAP EWM and ABAP consulting services. Based in Riga, Latvia.",
-    url: "https://debuggertr.com/contact",
+    url: "https://www.debuggertr.com/contact",
   },
 };
 
