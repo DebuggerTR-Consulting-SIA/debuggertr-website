@@ -184,8 +184,8 @@ export default function AbapPage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-text">{t.capTitle}</h2>
           </MotionDiv>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {capabilities[locale].map(({ icon: Icon, title, desc }) => (
-              <MotionItem key={title}>
+            {capabilities[locale].map(({ icon: Icon, title, desc }, i) => (
+              <MotionItem key={i}>
                 <div className="p-6 bg-white rounded-2xl border border-light-2 hover:shadow-lg hover:border-emerald-500/20 transition-all h-full">
                   <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-4">
                     <Icon size={24} className="text-emerald-600" />
