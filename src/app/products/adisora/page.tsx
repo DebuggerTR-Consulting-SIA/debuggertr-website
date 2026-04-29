@@ -13,6 +13,7 @@ import {
   Users,
   ClipboardList,
   Smartphone,
+  Apple,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { MotionDiv, StaggerContainer, MotionItem } from "@/components/animations/MotionWrapper";
@@ -21,6 +22,8 @@ import type { Locale } from "@/messages";
 const ADISORA_URL = "https://www.adisora.com";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.debuggertr.adisorabusiness";
+const APP_STORE_URL =
+  "https://apps.apple.com/lv/app/adisora-business-app/id6763128028";
 
 const features: Record<Locale, { icon: React.ElementType; title: string; desc: string }[]> = {
   tr: [
@@ -76,12 +79,16 @@ const content: Record<Locale, {
   platformTitle: string;
   platformWeb: string;
   platformWebDesc: string;
-  platformApp: string;
-  platformAppDesc: string;
+  platformAndroid: string;
+  platformAndroidDesc: string;
+  platformIos: string;
+  platformIosDesc: string;
+  mobileAvailability: string;
   ctaTitle: string;
   ctaText: string;
   visitWebsite: string;
   getOnPlay: string;
+  getOnAppStore: string;
 }> = {
   tr: {
     badge: "Restoran SaaS",
@@ -96,13 +103,17 @@ const content: Record<Locale, {
     platformTitle: "Hangi platformlarda?",
     platformWeb: "Web Yönetim Paneli",
     platformWebDesc: "Tarayıcı üzerinden tüm şubelerinizi yönetin.",
-    platformApp: "Adisora Business — Android",
-    platformAppDesc: "Sahada hızlı erişim için mobil uygulama.",
+    platformAndroid: "Android",
+    platformAndroidDesc: "Adisora Business — Google Play'de.",
+    platformIos: "iOS",
+    platformIosDesc: "Adisora Business App — App Store'da.",
+    mobileAvailability: "Mobil uygulamalar şu an Letonya ve Türkiye'de indirilebilir.",
     ctaTitle: "Adisora'yı keşfedin",
     ctaText:
-      "Demo talep edin ya da uygulamayı doğrudan Google Play'den indirip test edin.",
+      "Demo talep edin ya da uygulamayı doğrudan App Store veya Google Play'den indirip test edin.",
     visitWebsite: "adisora.com'u ziyaret et",
     getOnPlay: "Google Play'den indir",
+    getOnAppStore: "App Store'dan indir",
   },
   en: {
     badge: "Restaurant SaaS",
@@ -117,13 +128,17 @@ const content: Record<Locale, {
     platformTitle: "Where it runs",
     platformWeb: "Web admin panel",
     platformWebDesc: "Manage every branch from your browser.",
-    platformApp: "Adisora Business — Android",
-    platformAppDesc: "Mobile app for fast access on the floor.",
+    platformAndroid: "Android",
+    platformAndroidDesc: "Adisora Business — on Google Play.",
+    platformIos: "iOS",
+    platformIosDesc: "Adisora Business App — on the App Store.",
+    mobileAvailability: "Mobile apps are currently downloadable in Latvia and Turkey.",
     ctaTitle: "Take Adisora for a spin",
     ctaText:
-      "Request a demo or grab the app on Google Play and try it end-to-end.",
+      "Request a demo or grab the app on the App Store or Google Play and try it end-to-end.",
     visitWebsite: "Visit adisora.com",
     getOnPlay: "Get it on Google Play",
+    getOnAppStore: "Download on the App Store",
   },
   lv: {
     badge: "Restorānu SaaS",
@@ -138,13 +153,17 @@ const content: Record<Locale, {
     platformTitle: "Kur tas darbojas",
     platformWeb: "Web administrācijas panelis",
     platformWebDesc: "Pārvaldiet katru filiāli no pārlūkprogrammas.",
-    platformApp: "Adisora Business — Android",
-    platformAppDesc: "Mobilā lietotne ātrai piekļuvei zālē.",
+    platformAndroid: "Android",
+    platformAndroidDesc: "Adisora Business — Google Play veikalā.",
+    platformIos: "iOS",
+    platformIosDesc: "Adisora Business App — App Store veikalā.",
+    mobileAvailability: "Mobilās lietotnes pašlaik ir lejupielādējamas Latvijā un Turcijā.",
     ctaTitle: "Izmēģiniet Adisora",
     ctaText:
-      "Pieprasiet demonstrāciju vai lejupielādējiet lietotni no Google Play un izmēģiniet pilnībā.",
+      "Pieprasiet demonstrāciju vai lejupielādējiet lietotni no App Store vai Google Play un izmēģiniet pilnībā.",
     visitWebsite: "Apmeklēt adisora.com",
     getOnPlay: "Lejupielādēt no Google Play",
+    getOnAppStore: "Lejupielādēt no App Store",
   },
   de: {
     badge: "Restaurant-SaaS",
@@ -159,13 +178,17 @@ const content: Record<Locale, {
     platformTitle: "Wo es läuft",
     platformWeb: "Web-Adminpanel",
     platformWebDesc: "Verwalten Sie jede Filiale aus dem Browser.",
-    platformApp: "Adisora Business — Android",
-    platformAppDesc: "Mobile App für schnellen Zugriff im Service.",
+    platformAndroid: "Android",
+    platformAndroidDesc: "Adisora Business — bei Google Play.",
+    platformIos: "iOS",
+    platformIosDesc: "Adisora Business App — im App Store.",
+    mobileAvailability: "Die mobilen Apps sind derzeit in Lettland und der Türkei verfügbar.",
     ctaTitle: "Adisora ausprobieren",
     ctaText:
-      "Demo anfragen oder die App direkt aus dem Google Play Store laden und durchtesten.",
+      "Demo anfragen oder die App direkt aus dem App Store oder Google Play laden und durchtesten.",
     visitWebsite: "adisora.com besuchen",
     getOnPlay: "Bei Google Play laden",
+    getOnAppStore: "Im App Store laden",
   },
 };
 
@@ -195,7 +218,7 @@ export default function AdisoraPage() {
               {t.title}
             </h1>
             <p className="text-xl text-white/70 max-w-2xl">{t.subtitle}</p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-4">
               <a
                 href={ADISORA_URL}
                 target="_blank"
@@ -204,6 +227,15 @@ export default function AdisoraPage() {
               >
                 {t.visitWebsite}
                 <ExternalLink size={18} />
+              </a>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
+              >
+                <Apple size={18} />
+                {t.getOnAppStore}
               </a>
               <a
                 href={PLAY_STORE_URL}
@@ -215,6 +247,7 @@ export default function AdisoraPage() {
                 {t.getOnPlay}
               </a>
             </div>
+            <p className="mt-4 text-sm text-white/50">{t.mobileAvailability}</p>
           </MotionDiv>
         </div>
       </section>
@@ -275,8 +308,8 @@ export default function AdisoraPage() {
               {t.platformTitle}
             </h2>
           </MotionDiv>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <MotionDiv variant="slideInLeft">
+          <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <MotionItem>
               <a
                 href={ADISORA_URL}
                 target="_blank"
@@ -295,8 +328,28 @@ export default function AdisoraPage() {
                   <ExternalLink size={14} />
                 </span>
               </a>
-            </MotionDiv>
-            <MotionDiv variant="slideInRight">
+            </MotionItem>
+            <MotionItem>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-8 bg-white rounded-2xl border border-light-2 hover:shadow-xl hover:border-primary/30 transition-all h-full"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
+                    <Apple size={28} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-text">{t.platformIos}</h3>
+                </div>
+                <p className="text-text-light mb-4">{t.platformIosDesc}</p>
+                <span className="inline-flex items-center gap-2 text-primary font-medium">
+                  App Store
+                  <ExternalLink size={14} />
+                </span>
+              </a>
+            </MotionItem>
+            <MotionItem>
               <a
                 href={PLAY_STORE_URL}
                 target="_blank"
@@ -307,16 +360,19 @@ export default function AdisoraPage() {
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
                     <Smartphone size={28} className="text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-text">{t.platformApp}</h3>
+                  <h3 className="text-xl font-bold text-text">{t.platformAndroid}</h3>
                 </div>
-                <p className="text-text-light mb-4">{t.platformAppDesc}</p>
+                <p className="text-text-light mb-4">{t.platformAndroidDesc}</p>
                 <span className="inline-flex items-center gap-2 text-primary font-medium">
                   Google Play
                   <ExternalLink size={14} />
                 </span>
               </a>
-            </MotionDiv>
-          </div>
+            </MotionItem>
+          </StaggerContainer>
+          <p className="mt-8 text-center text-sm text-text-light">
+            {t.mobileAvailability}
+          </p>
         </div>
       </section>
 
@@ -330,7 +386,7 @@ export default function AdisoraPage() {
             <p className="text-lg text-text-light mb-8 max-w-2xl mx-auto">
               {t.ctaText}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <a
                 href={ADISORA_URL}
                 target="_blank"
@@ -339,6 +395,15 @@ export default function AdisoraPage() {
               >
                 {t.visitWebsite}
                 <ExternalLink size={20} />
+              </a>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 border-2 border-primary text-primary text-lg font-bold rounded-xl hover:bg-primary/5 transition-all"
+              >
+                <Apple size={20} />
+                {t.getOnAppStore}
               </a>
               <a
                 href={PLAY_STORE_URL}
@@ -350,6 +415,7 @@ export default function AdisoraPage() {
                 {t.getOnPlay}
               </a>
             </div>
+            <p className="mt-6 text-sm text-text-light">{t.mobileAvailability}</p>
           </MotionDiv>
         </div>
       </section>
