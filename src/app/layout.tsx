@@ -65,6 +65,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    other: {
+      "msvalidate.01": "3BA7CA59C21D7DD40DD5B614875A0CA9",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
