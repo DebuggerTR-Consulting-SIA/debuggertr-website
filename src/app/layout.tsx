@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | DebuggerTR Consulting",
   },
   description:
-    "SAP EWM (Extended Warehouse Management) and ABAP consulting services based in Riga, Latvia. Expert SAP warehouse management and custom ABAP development for European businesses.",
+    "SAP EWM (Extended Warehouse Management) & ABAP consulting from Riga, Latvia. Implementation, S/4HANA migration & ABAP development for European businesses.",
   keywords: [
     // English
     "SAP EWM", "SAP EWM consulting", "ABAP development", "SAP consulting",
