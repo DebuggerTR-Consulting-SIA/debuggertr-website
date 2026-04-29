@@ -5,6 +5,8 @@ const tr = {
     services: "Hizmetler",
     sapEwm: "SAP EWM Danışmanlık",
     abap: "ABAP Geliştirme",
+    products: "Ürünler",
+    adisora: "Adisora",
     references: "Referanslar",
     contact: "İletişim",
   },

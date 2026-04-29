@@ -11,6 +11,7 @@ import {
   Warehouse,
   Code,
   Link2,
+  Store,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { locales } from "@/messages";
@@ -19,6 +20,10 @@ import type { Locale } from "@/messages";
 const serviceIcons = [
   { icon: Warehouse, key: "sapEwm" as const, href: "/services/sap-ewm" },
   { icon: Code, key: "abap" as const, href: "/services/abap" },
+];
+
+const productIcons = [
+  { icon: Store, key: "adisora" as const, href: "/products/adisora" },
 ];
 
 const langLabels: Record<Locale, { flag: string; label: string }> = {
@@ -150,6 +155,27 @@ export default function Navbar() {
                         {messages.nav.services} →
                       </p>
                     </a>
+                    <div className="px-4 pt-3 pb-1 border-t border-light-2 mt-1">
+                      <p className="text-xs uppercase tracking-wider text-text-light">
+                        {messages.nav.products}
+                      </p>
+                    </div>
+                    {productIcons.map(({ icon: Icon, key, href }) => (
+                      <a
+                        key={key}
+                        href={href}
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-light transition-colors"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                          <Icon size={20} className="text-emerald-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-text">
+                            {messages.nav[key]}
+                          </p>
+                        </div>
+                      </a>
+                    ))}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -248,6 +274,24 @@ export default function Navbar() {
                     {messages.nav.services}
                   </p>
                   {serviceIcons.map(({ icon: Icon, key, href }) => (
+                    <a
+                      key={key}
+                      href={href}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-3 py-2.5 text-text hover:text-primary transition-colors"
+                    >
+                      <Icon size={18} />
+                      <span className="text-sm font-medium">
+                        {messages.nav[key]}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+                <div className="px-4 py-2">
+                  <p className="text-xs uppercase tracking-wider text-text-light mb-2">
+                    {messages.nav.products}
+                  </p>
+                  {productIcons.map(({ icon: Icon, key, href }) => (
                     <a
                       key={key}
                       href={href}

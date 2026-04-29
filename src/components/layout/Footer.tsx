@@ -83,6 +83,7 @@ export default function Footer() {
                 { href: "/services/sap-ewm", label: messages.nav.sapEwm },
                 { href: "/services/abap", label: messages.nav.abap },
                 { href: "/services", label: messages.nav.services },
+                { href: "/products/adisora", label: messages.nav.adisora },
               ].map((link) => (
                 <li key={link.href}>
                   <a

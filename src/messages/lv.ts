@@ -5,6 +5,8 @@ const lv = {
     services: "Pakalpojumi",
     sapEwm: "SAP EWM Konsultācijas",
     abap: "ABAP Izstrāde",
+    products: "Produkti",
+    adisora: "Adisora",
     references: "Atsauces",
     contact: "Kontakti",
   },

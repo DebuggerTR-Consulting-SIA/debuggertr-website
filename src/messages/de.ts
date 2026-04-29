@@ -5,6 +5,8 @@ const de = {
     services: "Leistungen",
     sapEwm: "SAP EWM Beratung",
     abap: "ABAP Entwicklung",
+    products: "Produkte",
+    adisora: "Adisora",
     references: "Referenzen",
     contact: "Kontakt",
   },
