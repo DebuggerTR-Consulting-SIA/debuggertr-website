@@ -84,7 +84,7 @@ const content: Record<Locale, {
   getOnPlay: string;
 }> = {
   tr: {
-    badge: "DebuggerTR Ürünü · SAP Dışı",
+    badge: "Restoran SaaS",
     title: "Adisora",
     subtitle: "Restoran operasyonlarının tamamı tek bir yerde.",
     intro:
@@ -105,7 +105,7 @@ const content: Record<Locale, {
     getOnPlay: "Google Play'den indir",
   },
   en: {
-    badge: "A DebuggerTR product · Non-SAP",
+    badge: "Restaurant SaaS",
     title: "Adisora",
     subtitle: "Restaurant operations, all in one place.",
     intro:
@@ -126,7 +126,7 @@ const content: Record<Locale, {
     getOnPlay: "Get it on Google Play",
   },
   lv: {
-    badge: "DebuggerTR produkts · Ne-SAP",
+    badge: "Restorānu SaaS",
     title: "Adisora",
     subtitle: "Restorāna operācijas — vienuviet.",
     intro:
@@ -147,7 +147,7 @@ const content: Record<Locale, {
     getOnPlay: "Lejupielādēt no Google Play",
   },
   de: {
-    badge: "Ein DebuggerTR-Produkt · Non-SAP",
+    badge: "Restaurant-SaaS",
     title: "Adisora",
     subtitle: "Gastronomie-Betrieb — alles an einem Ort.",
     intro:
