@@ -46,13 +46,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.debuggertr.com"),
   alternates: {
     canonical: "/",
-    languages: {
-      "en": "/",
-      "de": "/",
-      "tr": "/",
-      "lv": "/",
-      "x-default": "/",
-    },
   },
   robots: {
     index: true,
