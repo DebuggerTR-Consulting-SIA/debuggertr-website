@@ -1,8 +1,12 @@
 import Script from "next/script";
+import tracking from "@/data/tracking.json";
 
 export default function TrackingScripts() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
-  const ymId = process.env.NEXT_PUBLIC_YM_ID?.trim();
+  // Source of truth is tracking.json (managed via the admin "SEO & Tracking" tab
+  // and committed to the repo, so the value is baked in at build time). An env var
+  // can override it per-environment without committing.
+  const gaId = (process.env.NEXT_PUBLIC_GA_ID ?? tracking.googleAnalytics)?.trim();
+  const ymId = (process.env.NEXT_PUBLIC_YM_ID ?? tracking.yandexMetrica)?.trim();
 
   return (
     <>
