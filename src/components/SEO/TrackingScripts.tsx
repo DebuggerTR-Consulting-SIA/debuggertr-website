@@ -3,10 +3,12 @@ import tracking from "@/data/tracking.json";
 
 export default function TrackingScripts() {
   // Source of truth is tracking.json (managed via the admin "SEO & Tracking" tab
-  // and committed to the repo, so the value is baked in at build time). An env var
-  // can override it per-environment without committing.
-  const gaId = (process.env.NEXT_PUBLIC_GA_ID ?? tracking.googleAnalytics)?.trim();
-  const ymId = (process.env.NEXT_PUBLIC_YM_ID ?? tracking.yandexMetrica)?.trim();
+  // and committed to the repo, so the value is baked in at build time). The env var
+  // is only a fallback for when the JSON value is empty — it must NOT override the
+  // committed ID, otherwise a stale Vercel env var (e.g. an old GA property) would
+  // silently win and analytics would flow to the wrong account.
+  const gaId = (tracking.googleAnalytics || process.env.NEXT_PUBLIC_GA_ID)?.trim();
+  const ymId = (tracking.yandexMetrica || process.env.NEXT_PUBLIC_YM_ID)?.trim();
 
   return (
     <>
