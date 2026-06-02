@@ -7,19 +7,31 @@ export default function TrackingScripts() {
   // is only a fallback for when the JSON value is empty — it must NOT override the
   // committed ID, otherwise a stale Vercel env var (e.g. an old GA property) would
   // silently win and analytics would flow to the wrong account.
-  const gaId = (tracking.googleAnalytics || process.env.NEXT_PUBLIC_GA_ID)?.trim();
+  //
+  // googleAnalytics may hold several Measurement IDs separated by commas; the page
+  // then sends events to every property (gtag's documented multi-property setup).
+  const gaIds = Array.from(
+    new Set(
+      (tracking.googleAnalytics || process.env.NEXT_PUBLIC_GA_ID || "")
+        .split(",")
+        .map((id) => id.trim())
+        .filter(Boolean)
+    )
+  );
   const ymId = (tracking.yandexMetrica || process.env.NEXT_PUBLIC_YM_ID)?.trim();
 
   return (
     <>
-      {gaId && (
+      {gaIds.length > 0 && (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaIds[0]}`}
             strategy="afterInteractive"
           />
           <Script id="ga-init" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());${gaIds
+              .map((id) => `gtag('config','${id}');`)
+              .join("")}`}
           </Script>
         </>
       )}
