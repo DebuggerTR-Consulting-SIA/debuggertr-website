@@ -86,7 +86,7 @@ export default function Footer() {
                 { href: "/products/adisora", label: messages.nav.adisora },
                 {
                   href: "https://candence-689ff.web.app/marketing",
-                  label: `${messages.nav.adisora} ↗`,
+                  label: "Candence ↗",
                 },
               ].map((link) => {
                 const external = link.href.startsWith("http");

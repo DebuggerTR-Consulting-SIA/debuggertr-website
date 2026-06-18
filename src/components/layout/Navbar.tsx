@@ -26,8 +26,8 @@ const productIcons = [
   { icon: Store, key: "adisora" as const, href: "/products/adisora" },
 ];
 
-// Live Adisora app (hosted at candence-689ff.web.app) — external link, opens in a new tab.
-const ADISORA_APP_URL = "https://candence-689ff.web.app/marketing";
+// Candence app (visual focus timer + AI study assistant) marketing page — external link, opens in a new tab.
+const CANDENCE_APP_URL = "https://candence-689ff.web.app/marketing";
 
 const langLabels: Record<Locale, { flag: string; label: string }> = {
   en: { flag: "🇬🇧", label: "EN" },
@@ -180,7 +180,7 @@ export default function Navbar() {
                       </a>
                     ))}
                     <a
-                      href={ADISORA_APP_URL}
+                      href={CANDENCE_APP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 px-4 py-3 hover:bg-light transition-colors"
@@ -190,7 +190,7 @@ export default function Navbar() {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-text">
-                          {messages.nav.adisora} ↗
+                          Candence ↗
                         </p>
                       </div>
                     </a>
@@ -323,7 +323,7 @@ export default function Navbar() {
                     </a>
                   ))}
                   <a
-                    href={ADISORA_APP_URL}
+                    href={CANDENCE_APP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
@@ -331,7 +331,7 @@ export default function Navbar() {
                   >
                     <Globe size={18} />
                     <span className="text-sm font-medium">
-                      {messages.nav.adisora} ↗
+                      Candence ↗
                     </span>
                   </a>
                 </div>
