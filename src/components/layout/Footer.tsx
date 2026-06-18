@@ -84,16 +84,26 @@ export default function Footer() {
                 { href: "/services/abap", label: messages.nav.abap },
                 { href: "/services", label: messages.nav.services },
                 { href: "/products/adisora", label: messages.nav.adisora },
-              ].map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/60 hover:text-primary-light transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+                {
+                  href: "https://candence-689ff.web.app/marketing",
+                  label: `${messages.nav.adisora} ↗`,
+                },
+              ].map((link) => {
+                const external = link.href.startsWith("http");
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      {...(external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="text-sm text-white/60 hover:text-primary-light transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

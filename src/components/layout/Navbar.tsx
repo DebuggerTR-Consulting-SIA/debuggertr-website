@@ -26,6 +26,9 @@ const productIcons = [
   { icon: Store, key: "adisora" as const, href: "/products/adisora" },
 ];
 
+// Live Adisora app (hosted at candence-689ff.web.app) — external link, opens in a new tab.
+const ADISORA_APP_URL = "https://candence-689ff.web.app/marketing";
+
 const langLabels: Record<Locale, { flag: string; label: string }> = {
   en: { flag: "🇬🇧", label: "EN" },
   tr: { flag: "🇹🇷", label: "TR" },
@@ -176,6 +179,21 @@ export default function Navbar() {
                         </div>
                       </a>
                     ))}
+                    <a
+                      href={ADISORA_APP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-light transition-colors"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                        <Globe size={20} className="text-emerald-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-text">
+                          {messages.nav.adisora} ↗
+                        </p>
+                      </div>
+                    </a>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -304,6 +322,18 @@ export default function Navbar() {
                       </span>
                     </a>
                   ))}
+                  <a
+                    href={ADISORA_APP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-3 py-2.5 text-text hover:text-primary transition-colors"
+                  >
+                    <Globe size={18} />
+                    <span className="text-sm font-medium">
+                      {messages.nav.adisora} ↗
+                    </span>
+                  </a>
                 </div>
                 {/* Mobile Language Switcher */}
                 <div className="px-4 pt-2">
