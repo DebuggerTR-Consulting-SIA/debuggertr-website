@@ -16,6 +16,13 @@ function isPassthrough(pathname: string): boolean {
   ) {
     return true;
   }
+  // Any request for a file with an extension is a static asset in /public
+  // (e.g. /images/logo.png, /icon.svg, /google….html, /manifest.webmanifest) —
+  // never a localized page, so it must not be locale-rewritten.
+  const lastSeg = pathname.split("/").pop() ?? "";
+  if (lastSeg.includes(".")) {
+    return true;
+  }
   return (
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
