@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SoftwareApplicationJsonLd } from "@/components/SEO/JsonLd";
+import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from "@/components/SEO/JsonLd";
 
 export const metadata: Metadata = {
   title: "Adisora — Restaurant Operations Platform",
@@ -21,6 +21,12 @@ export default function AdisoraLayout({
 }) {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://www.debuggertr.com" },
+          { name: "Adisora", url: "https://www.debuggertr.com/products/adisora" },
+        ]}
+      />
       <SoftwareApplicationJsonLd
         name="Adisora Business"
         description="Adisora is a multilingual restaurant operations platform by DebuggerTR — menu, ordering, kitchen and billing in one place. Web panel + iOS & Android apps."

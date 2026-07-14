@@ -64,7 +64,9 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true,
+    // Deployed on Vercel (not a static export), so let Next optimize/resize
+    // images and serve modern formats (WebP/AVIF) for better LCP.
+    unoptimized: false,
   },
   async redirects() {
     return [

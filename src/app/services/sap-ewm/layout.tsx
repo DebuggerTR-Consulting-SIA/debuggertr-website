@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServiceJsonLd } from "@/components/SEO/JsonLd";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/SEO/JsonLd";
 
 export const metadata: Metadata = {
   title: "SAP EWM Consulting",
@@ -17,6 +17,13 @@ export const metadata: Metadata = {
 export default function SapEwmLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://www.debuggertr.com" },
+          { name: "Services", url: "https://www.debuggertr.com/services" },
+          { name: "SAP EWM Consulting", url: "https://www.debuggertr.com/services/sap-ewm" },
+        ]}
+      />
       <ServiceJsonLd
         name="SAP EWM Consulting"
         description="SAP Extended Warehouse Management (EWM) consulting: implementation, S/4HANA migration, RF/mobile rollout, and process optimization for European businesses."

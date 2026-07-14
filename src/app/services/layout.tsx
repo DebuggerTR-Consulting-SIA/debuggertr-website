@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { ServiceJsonLd } from "@/components/SEO/JsonLd";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/SEO/JsonLd";
 
 export const metadata: Metadata = {
   title: "SAP EWM & ABAP Services",
@@ -18,6 +18,12 @@ export const metadata: Metadata = {
 export default function ServicesLayout({ children }: { children: ReactNode }) {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://www.debuggertr.com" },
+          { name: "Services", url: "https://www.debuggertr.com/services" },
+        ]}
+      />
       <ServiceJsonLd
         name="SAP EWM & ABAP Consulting Services"
         description="SAP EWM consulting, ABAP development, SAP integration, and training services. End-to-end warehouse management solutions for European businesses."
