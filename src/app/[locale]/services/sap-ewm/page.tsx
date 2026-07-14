@@ -12,6 +12,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
+import { localeHref } from "@/lib/i18n-routing";
 import { MotionDiv, StaggerContainer, MotionItem } from "@/components/animations/MotionWrapper";
 import type { Locale } from "@/messages";
 
@@ -204,7 +205,7 @@ export default function SapEwmPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MotionDiv>
             <a
-              href="/contact"
+              href={localeHref(locale, "/contact")}
               className="group inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-primary to-primary-light text-white text-lg font-bold rounded-xl hover:shadow-2xl hover:shadow-primary/30 transition-all hover:-translate-y-1"
             >
               {t.ctaText}

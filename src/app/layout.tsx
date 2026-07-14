@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import ClientLayout from "@/components/layout/ClientLayout";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/SEO/JsonLd";
 import TrackingScripts from "@/components/SEO/TrackingScripts";
 
@@ -96,7 +95,7 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <WebsiteJsonLd />
         <TrackingScripts />
-        <ClientLayout>{children}</ClientLayout>
+        {children}
         <Analytics />
       </body>
     </html>

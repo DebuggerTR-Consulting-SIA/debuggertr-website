@@ -3,9 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
+import { localeHref } from "@/lib/i18n-routing";
 
 export default function CTASection() {
-  const { messages } = useI18n();
+  const { messages, locale } = useI18n();
 
   return (
     <section className="py-24 relative overflow-hidden">
@@ -48,7 +49,7 @@ export default function CTASection() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <a
-            href="/contact"
+            href={localeHref(locale, "/contact")}
             className="group inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-accent to-accent-hover text-white text-lg font-bold rounded-xl hover:shadow-2xl hover:shadow-accent/30 transition-all hover:-translate-y-1"
           >
             {messages.cta.button}
