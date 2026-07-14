@@ -19,7 +19,7 @@ import { useI18n } from "@/lib/i18n-context";
 import { MotionDiv, StaggerContainer, MotionItem } from "@/components/animations/MotionWrapper";
 import type { Locale } from "@/messages";
 
-const ADISORA_URL = "https://www.adisora.com";
+const ADISORA_URL = "https://adisora.com";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.debuggertr.adisorabusiness";
 const APP_STORE_URL =
