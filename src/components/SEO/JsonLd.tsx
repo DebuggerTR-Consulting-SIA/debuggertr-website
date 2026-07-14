@@ -54,6 +54,46 @@ export function WebsiteJsonLd() {
   );
 }
 
+export function SoftwareApplicationJsonLd({
+  name,
+  description,
+  url,
+  downloadUrls,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  downloadUrls: string[];
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "iOS, Android, Web",
+    downloadUrl: downloadUrls,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "DebuggerTR Consulting SIA",
+      url: "https://www.debuggertr.com",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export function ServiceJsonLd({
   name,
   description,

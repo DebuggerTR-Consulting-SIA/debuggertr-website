@@ -72,19 +72,13 @@ export const metadata: Metadata = {
     title: "DebuggerTR Consulting | SAP EWM & ABAP Consulting",
     description:
       "Expert SAP EWM and ABAP consulting services based in Latvia. Warehouse management implementation, migration, and optimization for European businesses.",
-    images: [
-      {
-        url: "/images/logo-dark.png",
-        width: 300,
-        height: 80,
-        alt: "DebuggerTR Consulting",
-      },
-    ],
+    // og:image is provided site-wide by src/app/opengraph-image.tsx (1200x630).
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "DebuggerTR Consulting | SAP EWM & ABAP",
     description: "Expert SAP EWM and ABAP consulting services based in Latvia.",
+    // twitter:image is provided by src/app/twitter-image.tsx (1200x630).
   },
 };
 
