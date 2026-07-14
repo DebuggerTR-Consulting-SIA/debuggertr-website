@@ -1,8 +1,17 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useCallback,
+  type ReactNode,
+} from "react";
+import { usePathname, useRouter } from "next/navigation";
 import type { Messages, Locale } from "@/messages";
 import { getMessages, locales } from "@/messages";
+
+const DEFAULT_LOCALE: Locale = "en";
 
 interface I18nContextType {
   locale: Locale;
@@ -12,34 +21,46 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | null>(null);
 
-const STORAGE_KEY = "debuggertr_locale";
+/** Strip a leading /tr, /lv, /de prefix (en is unprefixed). Returns "/..." path. */
+function stripLocale(pathname: string): string {
+  const seg = pathname.split("/")[1];
+  if ((locales as readonly string[]).includes(seg) && seg !== DEFAULT_LOCALE) {
+    return pathname.slice(seg.length + 1) || "/";
+  }
+  return pathname || "/";
+}
 
 export function I18nProvider({
   children,
-  defaultLocale = "tr",
+  locale,
 }: {
   children: ReactNode;
-  defaultLocale?: Locale;
+  locale: Locale;
 }) {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
   const messages = getMessages(locale);
+  const router = useRouter();
+  const pathname = usePathname();
 
+  // Keep <html lang> in sync with the active locale (root layout renders a
+  // static shell; this corrects it client-side for tr/lv/de).
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const saved = window.localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (saved && (locales as readonly string[]).includes(saved) && saved !== locale) {
-      setLocaleState(saved);
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = locale;
     }
-  }, []);
+  }, [locale]);
 
-  const setLocale = useCallback((newLocale: Locale) => {
-    if (locales.includes(newLocale)) {
-      setLocaleState(newLocale);
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(STORAGE_KEY, newLocale);
-      }
-    }
-  }, []);
+  const setLocale = useCallback(
+    (newLocale: Locale) => {
+      if (!locales.includes(newLocale) || newLocale === locale) return;
+      const basePath = stripLocale(pathname || "/");
+      const target =
+        newLocale === DEFAULT_LOCALE
+          ? basePath
+          : `/${newLocale}${basePath === "/" ? "" : basePath}`;
+      router.push(target || "/");
+    },
+    [locale, pathname, router],
+  );
 
   return (
     <I18nContext.Provider value={{ locale, messages, setLocale }}>

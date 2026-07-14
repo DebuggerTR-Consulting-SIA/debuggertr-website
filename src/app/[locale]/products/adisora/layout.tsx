@@ -1,18 +1,27 @@
 import type { Metadata } from "next";
 import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from "@/components/SEO/JsonLd";
+import { alternatesFor, localizedUrl } from "@/lib/i18n-routing";
+import type { Locale } from "@/messages";
 
-export const metadata: Metadata = {
-  title: "Adisora — Restaurant Operations Platform",
-  description:
-    "Adisora is a multilingual restaurant operations platform by DebuggerTR — menu, ordering, kitchen and billing in one place. Web panel + Android app.",
-  alternates: { canonical: "https://www.debuggertr.com/products/adisora" },
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const l = (await params).locale as Locale;
+  return {
     title: "Adisora — Restaurant Operations Platform",
     description:
-      "Multilingual restaurant operations platform: menu, ordering, kitchen and billing in one place. By DebuggerTR.",
-    url: "https://www.debuggertr.com/products/adisora",
-  },
-};
+      "Adisora is a multilingual restaurant operations platform by DebuggerTR — menu, ordering, kitchen and billing in one place. Web panel + Android app.",
+    alternates: alternatesFor(l, "/products/adisora"),
+    openGraph: {
+      title: "Adisora — Restaurant Operations Platform",
+      description:
+        "Multilingual restaurant operations platform: menu, ordering, kitchen and billing in one place. By DebuggerTR.",
+      url: localizedUrl(l, "/products/adisora"),
+    },
+  };
+}
 
 export default function AdisoraLayout({
   children,

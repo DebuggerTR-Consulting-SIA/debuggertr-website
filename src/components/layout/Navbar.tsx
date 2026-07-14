@@ -14,6 +14,7 @@ import {
   Store,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
+import { localeHref } from "@/lib/i18n-routing";
 import { locales } from "@/messages";
 import type { Locale } from "@/messages";
 
@@ -79,7 +80,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <a href={localeHref(locale, "/")} className="flex items-center">
             <Image
               src={scrolled ? "/images/logo-dark.png" : "/images/logo-white.png"}
               alt="DebuggerTR Consulting"
@@ -96,7 +97,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={localeHref(locale, link.href)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary ${
                   scrolled ? "text-text" : "text-white"
                 }`}
@@ -134,7 +135,7 @@ export default function Navbar() {
                     {serviceIcons.map(({ icon: Icon, key, href }) => (
                       <a
                         key={key}
-                        href={href}
+                        href={localeHref(locale, href)}
                         className="flex items-center gap-3 px-4 py-3 hover:bg-light transition-colors"
                       >
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -148,7 +149,7 @@ export default function Navbar() {
                       </a>
                     ))}
                     <a
-                      href="/services"
+                      href={localeHref(locale, "/services")}
                       className="flex items-center gap-3 px-4 py-3 hover:bg-light transition-colors border-t border-light-2"
                     >
                       <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -166,7 +167,7 @@ export default function Navbar() {
                     {productIcons.map(({ icon: Icon, key, href }) => (
                       <a
                         key={key}
-                        href={href}
+                        href={localeHref(locale, href)}
                         className="flex items-center gap-3 px-4 py-3 hover:bg-light transition-colors"
                       >
                         <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
@@ -248,7 +249,7 @@ export default function Navbar() {
 
             {/* CTA */}
             <a
-              href="/contact"
+              href={localeHref(locale, "/contact")}
               className="ml-3 px-5 py-2.5 bg-gradient-to-r from-primary to-primary-light text-white text-sm font-medium rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5"
             >
               {messages.hero.ctaSecondary}
@@ -280,7 +281,7 @@ export default function Navbar() {
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
-                    href={link.href}
+                    href={localeHref(locale, link.href)}
                     onClick={() => setIsOpen(false)}
                     className="block px-4 py-3 text-text hover:bg-light rounded-lg font-medium transition-colors"
                   >
@@ -294,7 +295,7 @@ export default function Navbar() {
                   {serviceIcons.map(({ icon: Icon, key, href }) => (
                     <a
                       key={key}
-                      href={href}
+                      href={localeHref(locale, href)}
                       onClick={() => setIsOpen(false)}
                       className="flex items-center gap-3 py-2.5 text-text hover:text-primary transition-colors"
                     >
@@ -312,7 +313,7 @@ export default function Navbar() {
                   {productIcons.map(({ icon: Icon, key, href }) => (
                     <a
                       key={key}
-                      href={href}
+                      href={localeHref(locale, href)}
                       onClick={() => setIsOpen(false)}
                       className="flex items-center gap-3 py-2.5 text-text hover:text-primary transition-colors"
                     >
@@ -362,7 +363,7 @@ export default function Navbar() {
                 </div>
                 <div className="px-4 pt-2">
                   <a
-                    href="/contact"
+                    href={localeHref(locale, "/contact")}
                     className="block text-center px-4 py-2.5 bg-gradient-to-r from-primary to-primary-light text-white text-sm font-medium rounded-lg"
                   >
                     {messages.hero.ctaSecondary}

@@ -3,9 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
+import { localeHref } from "@/lib/i18n-routing";
 
 export default function HeroSection() {
-  const { messages } = useI18n();
+  const { messages, locale } = useI18n();
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -81,7 +82,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="/services"
+                href={localeHref(locale, "/services")}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-primary/30 transition-all hover:-translate-y-0.5"
               >
                 {messages.hero.cta}
@@ -91,7 +92,7 @@ export default function HeroSection() {
                 />
               </a>
               <a
-                href="/contact"
+                href={localeHref(locale, "/contact")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
               >
                 {messages.hero.ctaSecondary}

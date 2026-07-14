@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
+import { localeHref } from "@/lib/i18n-routing";
 
 export default function Footer() {
-  const { messages } = useI18n();
+  const { messages, locale } = useI18n();
 
   return (
     <footer className="bg-dark text-white">
@@ -63,7 +64,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                    href={localeHref(locale, link.href)}
                     className="text-sm text-white/60 hover:text-primary-light transition-colors"
                   >
                     {link.label}
@@ -93,7 +94,7 @@ export default function Footer() {
                 return (
                   <li key={link.href}>
                     <a
-                      href={link.href}
+                      href={localeHref(locale, link.href)}
                       {...(external
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
