@@ -10,9 +10,12 @@ export const DEFAULT_LOCALE: Locale = "en";
  */
 export function localizedUrl(locale: Locale, path: string): string {
   const clean = path === "/" ? "" : path;
+  // Non-default locale roots must NOT carry a trailing slash (the route is
+  // /tr, not /tr/ — the latter 308-redirects, which would make canonical +
+  // hreflang point at a redirecting URL).
   return locale === DEFAULT_LOCALE
     ? `${BASE_URL}${clean || "/"}`
-    : `${BASE_URL}/${locale}${clean || "/"}`;
+    : `${BASE_URL}/${locale}${clean}`;
 }
 
 /**
