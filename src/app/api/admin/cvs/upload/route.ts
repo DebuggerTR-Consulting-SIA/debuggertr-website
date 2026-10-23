@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import fs from "fs";
+import { adminGuard } from "@/lib/admin-guard";
 
-// Admin API is dev-only; force-static so the production static export build succeeds.
-export const dynamic = "force-static";
+// Local dev tool, refused elsewhere by adminGuard (src/lib/admin-guard.ts).
+// force-dynamic: the handler gets the real request (force-static empties the
+// headers and strips the query string).
+export const dynamic = "force-dynamic";
 
 const PROJECT_ROOT = process.env.PROJECT_ROOT ?? process.cwd();
 const CVS_DIR = path.join(PROJECT_ROOT, "public", "cvs");
@@ -67,6 +70,8 @@ function enhanceHtml(html: string): string {
 }
 
 export async function POST(req: NextRequest) {
+  const denied = adminGuard(req);
+  if (denied) return denied;
   try {
     const formData = await req.formData();
     const file = formData.get("file") as File | null;
