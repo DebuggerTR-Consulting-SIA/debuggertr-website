@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import fs from "fs";
+import { adminGuard } from "@/lib/admin-guard";
 
-// Admin API is dev-only; force-static so the production static export build succeeds.
-export const dynamic = "force-static";
+// Local dev tool, refused elsewhere by adminGuard (src/lib/admin-guard.ts).
+// force-dynamic: the handler gets the real request (force-static empties the
+// headers and strips the query string).
+export const dynamic = "force-dynamic";
 
 const PROJECT_ROOT = process.env.PROJECT_ROOT ?? process.cwd();
 const DATA_FILE = path.join(PROJECT_ROOT, "src", "data", "cvs.json");
@@ -36,11 +39,15 @@ function writeCvs(data: CvEntry[]) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf-8");
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const denied = adminGuard(req);
+  if (denied) return denied;
   return NextResponse.json(readCvs());
 }
 
 export async function POST(req: NextRequest) {
+  const denied = adminGuard(req);
+  if (denied) return denied;
   try {
     const body = await req.json() as CvEntry;
     const cvs = readCvs();
@@ -58,6 +65,8 @@ export async function POST(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
+  const denied = adminGuard(req);
+  if (denied) return denied;
   try {
     const { searchParams } = new URL(req.url);
     const id = searchParams.get("id");

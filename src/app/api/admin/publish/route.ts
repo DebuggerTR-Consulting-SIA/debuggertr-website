@@ -1,11 +1,14 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { exec } from "child_process";
 import { promisify } from "util";
 import fs from "fs";
 import path from "path";
+import { adminGuard } from "@/lib/admin-guard";
 
-// Admin API is dev-only; force-static so the production static export build succeeds.
-export const dynamic = "force-static";
+// Local dev tool, refused elsewhere by adminGuard (src/lib/admin-guard.ts).
+// force-dynamic: the handler gets the real request (force-static empties the
+// headers and strips the query string).
+export const dynamic = "force-dynamic";
 
 const execAsync = promisify(exec);
 
@@ -31,7 +34,9 @@ function removeDirSync(dir: string) {
   if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
 }
 
-export async function POST() {
+export async function POST(req: NextRequest) {
+  const denied = adminGuard(req);
+  if (denied) return denied;
   try {
     // Resolve node binary path from the running process to avoid PATH issues
     // when Turbopack tries to spawn pooled node processes in a restricted env.
