@@ -194,6 +194,8 @@ export default function CvProfileClient({ initialCv }: { initialCv: CvEntry }) {
           table { width: 100%; border-collapse: collapse; margin: 4px 0; }
           td { padding: 3px 6px; vertical-align: top; font-size: 10px; }
           img { max-width: 80px; max-height: 50px; object-fit: contain; }
+          img[alt="Capgemini logo"], img[alt="Asahi Beverages logo"] { height: 1.25em; width: auto; vertical-align: middle; margin: 0 6px 0 0; }
+          img[alt="Asahi Beverages logo"] { height: 2em; }
           ul { padding-left: 16px; margin: 3px 0; }
           li { font-size: 10px; margin: 1px 0; }
           .portfolio-card { border-left: 3px solid #e2e8f0; padding: 6px 0 6px 10px; margin: 8px 0; page-break-inside: avoid; }
@@ -299,6 +301,9 @@ export default function CvProfileClient({ initialCv }: { initialCv: CvEntry }) {
         .cv-body td, .cv-body th { padding: 0.35rem 0.5rem; vertical-align: top; font-size: 0.875rem; }
         .cv-body td:first-child:has(img) { width: 110px; text-align: center; vertical-align: middle; background: #f9fafb; border-right: 1px solid #f1f5f9; padding: 0.5rem; }
         .cv-body img { max-width: 90px; max-height: 58px; object-fit: contain; border-radius: 3px; }
+        /* Partner/client icons sit small and inline at the line start, as in the PDF (preflight makes img block) */
+        .cv-body img[alt="Capgemini logo"], .cv-body img[alt="Asahi Beverages logo"] { display: inline-block; height: 1.25em; width: auto; vertical-align: middle; margin: 0 6px 0 0; border-radius: 0; }
+        .cv-body img[alt="Asahi Beverages logo"] { height: 2em; }
 
         /* ── Project links ── */
         .cv-body a[href^="#port_"] {

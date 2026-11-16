@@ -84,7 +84,7 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
-        source: "/cvs/:file(.*\\.docx)",
+        source: "/cvs/:file(.*\\.(?:docx|pdf))",
         headers: [
           {
             key: "X-Robots-Tag",
